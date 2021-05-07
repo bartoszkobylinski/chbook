@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Books</h1>
+<h1>Książki o których wspominamy na pokojach na ClubHouse</h1>
+
+<select name="" id=""></select>
+
+<div class="harry">
+  <p>eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
+</div>
 
 <table>
   <thead>
@@ -18,6 +24,9 @@
         <td><%= book.room %></td>
         <td><%= book.author %></td>
         <td><%= book.title %></td>
+        <td><%= book.cover %></td>
+        <td><%= image_tag(book.cover) if book.cover.attached? %></td>
+        
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
