@@ -6,10 +6,6 @@
 </nav>
 <main>
   <div class="book-cards-wrapper">
-    <div class="book-card-room"> 
-      <p><% @book_room %></p>
-      
-    </div>
     <% @books.each do |book| %>
     <div class="book-card">
       <div class="book-cover" style='width:100px'><%= image_tag(book.cover) if book.cover.attached? %></div>
