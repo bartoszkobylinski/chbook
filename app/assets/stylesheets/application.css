@@ -13,10 +13,57 @@
  *= require_tree .
  *= require_self
  */
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+    background-color: #F2EFE4;
+    margin: 0;
+    padding: 0;
+}
+.title-wrapper{
+    text-align: center;
+}
+main{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.book-cards-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    padding: 1rem;
+}
+.book-card{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15%;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
 
- td{
-     width: 10%;
- }
- img{
-     width: 100%;
- }
+.book-cover{
+    width: 300px;
+}
+.book-card h4,
+.book-card p{
+    text-transform: capitalize;
+    text-align: center;
+}
+.book-card h4{
+    font-size: 1rem;
+    padding: 0.1rem;
+}
+.book-card p{
+    font-size: 0.75rem;
+    padding: 0.1rem;
+}
+
+.book-cover img{
+    width: 100%;
+    border-radius: 25px;
+}

@@ -1,14 +1,40 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Książki o których wspominamy na pokojach na ClubHouse</h1>
-
-<select name="" id=""></select>
-
-<div class="harry">
-  <p>eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
+<nav>
+  <div class="title-wrapper">
+    <h1>Książki o których wspominamy na pokojach na ClubHouse</h1>
+  </div>
+</nav>
+<main>
+  <div class="book-cards-wrapper">
+    <div class="book-card-room"> 
+      <p><% @book_room %></p>
+      
+    </div>
+    <% @books.each do |book| %>
+    <div class="book-card">
+      <div class="book-cover" style='width:100px'><%= image_tag(book.cover) if book.cover.attached? %></div>
+      <p><%= book.room %></p>
+      <h4><%= book.author %></h4>
+      <p><%= book.title %></p>
+    </div>
+    <% end %>
+  </div>
+<div class="select-book">
+  <select name="books" id="books-select" onchange="populate()">
+    <% @books.each do |book| %>
+    <option value="<%= book.room %>"><%= book.room %></option>
+    <% end %>
+  </select>
 </div>
+<%= form_with(scope: "book") do |f| %>
+  <%= f.select :id, @books.map {|b| [b.room, b.id]} %>
+<% end %>
+</main>
 
-<table>
+  
+
+<!--
+  <table>
   <thead>
     <tr>
       <th>Room</th>
@@ -34,6 +60,8 @@
     <% end %>
   </tbody>
 </table>
+-->
+
 
 <br>
 
